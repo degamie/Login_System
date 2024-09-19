@@ -22,5 +22,12 @@ public class TokenService {
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.joining(" "));
         return "";
+        JwtClaimsSet claimsSet=JwTClaimsSet.builder()
+                .issuer("self")
+                .issuedAt(now)
+                .subject(auth.getName())
+                .claim("roles",scope)
+                .build();
+        return jwtEncoder.encode(JwtEncoderParameters.from(claimsSet).getTokenValue());
     }
 }
