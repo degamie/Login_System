@@ -39,7 +39,7 @@ public class SecurityConfiguration {
 //                .and()
                 .authorizeHttpRequests(auth-> auth.anyRequest())
                 .oauth2ResourceServer(Oath2ResourceServerConfigurer::jwt)
-                .SessionManagement(session->session.SessionCreationPolicy(SessionCreationPolicy.STATELESS));
+                .SessionManagement(session->session.SessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
                 .build();
 
