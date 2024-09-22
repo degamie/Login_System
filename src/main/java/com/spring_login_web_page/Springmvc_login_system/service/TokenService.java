@@ -5,10 +5,14 @@ import org.springframework.core.codec.Decoder;
 import org.springframework.core.codec.Encoder;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.oauth2.jwt.JwtClaimsSet;
+import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.util.stream.Collectors;
+import org.springframework.security.oauth2.jwt.JwtClaimsSet;
+
 @Service
 public class TokenService {
     @Autowired
@@ -22,12 +26,15 @@ public class TokenService {
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.joining(" "));
         return "";
-        JwtClaimsSet claimsSet=JwTClaimsSet.builder()
+        JwtClaimsSet claimsSet;
+        claimsSet.builder()
                 .issuer("self")
                 .issuedAt(now)
                 .subject(auth.getName())
-                .claim("roles",scope)
+                .claim("roles", scope)
                 .build();
-        return jwtEncoder.encode(JwtEncoderParameters.from(claimsSet).getTokenValue());
+
+
+        return jwtEncoder.encode(JwtEncoderParameters.from(claimsSet).getClass(1));
     }
 }

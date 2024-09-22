@@ -7,18 +7,19 @@ import java.security.NoSuchAlgorithmException;
 import static jdk.internal.misc.OSEnvironment.initialize;
 
 public class keypairGenerator {
-    public static void getKeypairgenerator(){
+    public Integer getKeypairgenerator(){
         KeyPair keyPair;
 
 
         try{
-            KeyPairGenerator keyPairgenerate.initialize(2048);
+            KeyPairGenerator keyPairgenerate;
+            initialize();
             keyPair = keyPairgenerate.generateKeyPair();
         }
         catch(Exception e){
            throw  new IllegalStateException();
-//           e.printStackTrace();
+         e.printStackTrace();
         }
-        return keypairGenerator;
+        return null;
     }
 }

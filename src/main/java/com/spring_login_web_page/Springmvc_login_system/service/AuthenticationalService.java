@@ -30,6 +30,7 @@ public class AuthenticationalService {
     private AuthenticationManager authenticationManager;
     @Autowired
     private TokenService tokenService;
+    private PasswordEncoder passwordEncoder;
 
 //@Autowired
     public LoginResponseDTO loginUsername(String username, String password) {
@@ -45,13 +46,23 @@ public class AuthenticationalService {
 
 
 //        @Autowired
-        public ApplicationUser registeruser (String username, String password){
-            Object encodedpassword = PasswordEncoder.encode(password);
-            return null;
+        public ApplicationUser registeruser (String username, String password,PasswordEncoder passwordEncoder) {
+            String password1 = passwordEncoder.encode (password) ;
+//                @Override
+////                public String encode(CharSequence rawPassword) {
+////                    return "";
+////                }
+////
+////                @Override
+////                public boolean matches(CharSequence rawPassword, String encodedPassword) {
+////                    return false;
+////                }
+//            }
 
             Role userRole = roleRepository.findByAuthority("USER").get();
             Set<Role> authorities = new HashSet<>();
             authorities.add(userRole);
-            return userRepository.save(new ApplicationUser(0, username, PasswordEncoder.encode(authorities)));
+            return null;
+//            return userRepository.save(new ApplicationUser(0, username,passwordEncoder.encode(authorities.equals(password.contains()))));
         }
     }
