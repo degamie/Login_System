@@ -1,6 +1,5 @@
 package com.spring_login_web_page.Springmvc_login_system.model;
 
-import com.spring_login_web_page.Springmvc_login_system.repository.UserRepository;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,40 +12,51 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name= "User")
+@Table(name= "USER")
 public class ApplicationUser implements UserDetails {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 //    @Column(name="userid")
     @Column(unique = true)
-    private Integer userid;
-
+//    private Integer userid;
+//    private final String user_id="null";
     private String username;
     private String password;
-    private Set<Role> authorities;
+    private Role authorities;
+    private String userid;
+
+    public ApplicationUser() {return;}
 
 
     //    private String message;
 //    public Set<Role> getRoles() {};
 
-    public Integer getUserid() {
-        return userid;
-    }
+//    public String getUserid(String userid) {
+//        return userid;
+//    }
 
-    public void setUserid(int userid) {
+    public void setUserid(String userid) {
         this.userid = userid;
+
+    }
+    public String getUserid(String userid) {
+      return userid;
+
     }
 
-    @JoinTable(
-            name = "user_role_junction",
-            joinColumns = {@JoinColumn(name = "user_id")},
-            inverseJoinColumns = {@JoinColumn(name = password)}
-    )
+
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinTable(
+//            name = "username",
+//            joinColumns = {@JoinColumn(name = "user_id")},
+//            inverseJoinColumns = {@JoinColumn(name = "username" )}
+//    )
 
 //    @Override
-    public ApplicationUser(Set<Role> authorities) {
+    public ApplicationUser(Role authorities) {
         super();
-        this.authorities = new HashSet<>(getAuthorities().hashCode());
+        this.authorities = authorities;
     }
 
     private HashSet<Object> Authorities() {
@@ -60,7 +70,7 @@ public class ApplicationUser implements UserDetails {
 
     @Override
     public String getPassword() {
-        return "";
+        return password;
     }
 
     //    @Override
@@ -96,7 +106,7 @@ public class ApplicationUser implements UserDetails {
     @Override
     public boolean isEnabled() {
         throw new UnsupportedOperationException("UnImplemented Method ");
-        return true;
+//         return ;
     }
 
     //    @Override
@@ -110,7 +120,7 @@ public class ApplicationUser implements UserDetails {
     }
 
     //        @Override
-    public Boolean setAuthorities(Set<Role> authorities) {
+    public Boolean setAuthorities(Role authorities) {
         this.authorities = authorities;
         return true;
     }
@@ -122,7 +132,7 @@ public class ApplicationUser implements UserDetails {
 //        this.username=username;
 
 
-    //    @Override
+//    @Override
     public String loadUserByUsername(String username) throws UsernameNotFoundException {
         System.out.println("In the UserDetailsServices");
         return username;
@@ -131,12 +141,12 @@ public class ApplicationUser implements UserDetails {
 //                ()->new UsernameNotFoundException;
 //        );
 
-    public ApplicationUser applicationUser(Integer userid, String username, String password, Set<Role> authorities) {
+    public ApplicationUser applicationUser(String userid, String username, String password, Set<Role> authorities) {
         this.userid = userid;
         this.username = username;
         this.password = password;
-        super();
-//        return true;
+//        super();
+        return applicationUser(userid, username, password, authorities);
 //        this.authorities = authorities;
     }
 }

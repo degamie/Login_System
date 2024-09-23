@@ -2,7 +2,6 @@ package com.spring_login_web_page.Springmvc_login_system.model;
 
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
-import java.security.NoSuchAlgorithmException;
 
 import static jdk.internal.misc.OSEnvironment.initialize;
 
@@ -12,13 +11,13 @@ public class keypairGenerator {
 
 
         try{
-            KeyPairGenerator keyPairgenerate;
+            KeyPairGenerator keyPairgenerate = null;
             initialize();
             keyPair = keyPairgenerate.generateKeyPair();
         }
         catch(Exception e){
            throw  new IllegalStateException();
-         e.printStackTrace();
+//         e.printStackTrace();
         }
         return null;
     }
