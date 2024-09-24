@@ -46,7 +46,7 @@ public class AuthenticationalService {
 
 
 //        @Autowired
-        public ApplicationUser registeruser (String username, String password,PasswordEncoder passwordEncoder) {
+        public ApplicationUser registeruser (String username, String password) {
             String password1 = passwordEncoder.encode (password) ;
 //                @Override
 ////                public String encode(CharSequence rawPassword) {

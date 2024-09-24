@@ -9,8 +9,10 @@ public class RegisterationDTO {
     }
     public RegisterationDTO(String username, String password) {
         super();
-        this.username=new User(username);
-        this.password=new User(password);
+        password=null;
+        this.username=new User(username,password,null);
+//        this.username=username;
+//        this.password=password;
 
     }
     public User getUsername() {

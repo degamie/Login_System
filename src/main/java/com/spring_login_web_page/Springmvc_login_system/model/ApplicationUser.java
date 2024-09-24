@@ -25,6 +25,8 @@ public class ApplicationUser implements UserDetails {
     private String password;
     private Role authorities;
     private String userid;
+    private String roleName;
+    private Integer roleValue;
 
     public ApplicationUser() {return;}
 
@@ -38,11 +40,25 @@ public class ApplicationUser implements UserDetails {
 
     public void setUserid(String userid) {
         this.userid = userid;
-
     }
     public String getUserid(String userid) {
       return userid;
 
+    }
+    public String setRoleByName(String roleName) {
+        this.roleName=roleName;
+        return roleName;
+    }
+
+    public String getRoleByName(String roleName) {
+        return roleName;
+    }
+    public void setRoleByValue(Integer roleValue) {
+        this.roleValue=roleValue;
+    }
+
+    public Integer getRoleValue(Integer roleValue) {
+        return roleValue=1;
     }
 
 

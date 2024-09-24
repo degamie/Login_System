@@ -14,8 +14,9 @@ public class AuthenticationController {
     private AuthenticationalService authenticationservice;
     @Autowired
     public String registerUser(@RequestAttribute RegisterationDTO Body) {
-        return "Authentication User Services "+authenticationservice.registeruser("Sarthak","PWD");
-//        return "Authentication User Services "+authenticationservice.registerUser(Body.getUsername(),Body.getPassword())
-
-        }
+        String username=null,password=null;
+        return "Authentication User Services "+authenticationservice.registeruser(username,password);
     }
+}
+//String Username,@RequestParam String password,
+//        return "Authentication User Services "+authenticationservice.registerUser(Body.getUsername(),Body.getPassword())
