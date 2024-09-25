@@ -59,7 +59,7 @@ public class AuthenticationalService {
 ////                }
 //            }
 
-            Role userRole = roleRepository.findByAuthority("USER").get();
+            Role userRole = roleRepository.findByAuthority("USER").get(0);
             Set<Role> authorities = new HashSet<>();
             authorities.add(userRole);
             return null;
