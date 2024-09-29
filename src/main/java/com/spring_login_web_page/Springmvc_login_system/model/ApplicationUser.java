@@ -3,7 +3,6 @@ package com.spring_login_web_page.Springmvc_login_system.model;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import javax.management.relation.Role;
 import java.util.Collection;
@@ -27,24 +26,19 @@ public class ApplicationUser implements UserDetails {
     private String userid;
     private String roleName;
     private Integer roleValue;
-
+    
+    public String getUserid(String userid) {
+        return userid;
+    }
+    public String setUserid(String userid) {
+        this.userid = userid;
+        return userid;
+    }
     public ApplicationUser() {return;}
-
-
-    //    private String message;
-//    public Set<Role> getRoles() {};
-
-//    public String getUserid(String userid) {
-//        return userid;
+        //        System.out.println("In the UserDetailsServices");
+//        return username;
 //    }
 
-    public void setUserid(String userid) {
-        this.userid = userid;
-    }
-    public String getUserid(String userid) {
-      return userid;
-
-    }
     public String setRoleByName(String roleName) {
         this.roleName=roleName;
         return roleName;
@@ -61,7 +55,9 @@ public class ApplicationUser implements UserDetails {
         return roleValue=1;
     }
 
-
+//    public String loadUserByUsername(String username) {
+//        return username;
+//    }
 //    @OneToOne(cascade = CascadeType.ALL)
 //    @JoinTable(
 //            name = "username",
@@ -149,20 +145,15 @@ public class ApplicationUser implements UserDetails {
 
 
 //    @Override
-    public String loadUserByUsername(String username) throws UsernameNotFoundException {
-        System.out.println("In the UserDetailsServices");
-        return username;
-    }
-//        return UserRepository.findByUsername(username).orElseThrow(
-//                ()->new UsernameNotFoundException;
-//        );
+
+
 
     public ApplicationUser applicationUser(String userid, String username, String password, Set<Role> authorities) {
         this.userid = userid;
         this.username = username;
         this.password = password;
-//        super();
         return applicationUser(userid, username, password, authorities);
+        //        super();
 //        this.authorities = authorities;
     }
 }

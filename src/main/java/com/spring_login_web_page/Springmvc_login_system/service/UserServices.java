@@ -1,7 +1,6 @@
 package com.spring_login_web_page.Springmvc_login_system.service;
 
 import com.spring_login_web_page.Springmvc_login_system.repository.RoleRepository;
-import com.spring_login_web_page.Springmvc_login_system.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -22,26 +21,37 @@ public class UserServices implements UserDetailsService{
     public UserServices(RoleRepository roleRepository) {
         this.roleRepository = roleRepository;
     }
+
     Set<Role> roles=new HashSet<>();
-//    public List<ApplicationUser> getUserId(String userId) {
-//        return userId;
+
+    public String findByUsername(String username) {
+        return username;
+    }
+
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+//        throw new UsernameNotFoundException(username + "LoadUserBYUserName");
+        System.out.println("In the UserDetailsServices"+username);
+        return null;
+    }
+    //    public <> getUserId(String userid) {
+//        return userid;
 //    }
 
 //    @Override
-    public Integer setUserId(Integer UserId) {
-        return UserId;
-    }
+//    public Integer setUserId(Integer userid) {
+//        return userid;
+//    }
 
-    @Override
-    public UserDetails loadUserByUsername(String username) {
-        this.loadUserByUsername(username);
-        return null;
-    }
+//    @Override
+//    public UserDetails loadUserByUsername(String username) {
+//        this.loadUserByUsername(username);
+//        return null;
+//    }
 
     //    @Override
-    public UserRepository loadUserByUsername(String username, String password) throws UsernameNotFoundException {
-        throw new UsernameNotFoundException(username + "LoadUserBYUserName");
-    }
+//    public UserRepository loadUserByUsername(String username, String password) throws UsernameNotFoundException {
+//
+//    }
 //        System.out.println(UserDetailsService.class.getName());
 //        if (username.equals(username)) throw new UsernameNotFoundException(username + "LoadUserByUsername");
 //        roles = new Role("USER", 1);

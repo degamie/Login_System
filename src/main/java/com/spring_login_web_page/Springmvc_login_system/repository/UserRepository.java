@@ -8,10 +8,9 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<ApplicationUser, String> {
-    public List<ApplicationUser> getUserId(Integer UserId);
-    public List<ApplicationUser>setUserId(Integer UserId);
-    public List<ApplicationUser> findByUsername(String username);
-    public List<ApplicationUser> loadUserByUsername(String username);
-
-
+    public List<String> getUserid(String userid);
+    public List<String> setUserid(String userid);
 }
+//    public List<ApplicationUser> findByUsername(String username);
+//    public List<ApplicationUser> loadUserByUsername(String username);
+
