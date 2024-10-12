@@ -1,15 +1,20 @@
 package com.spring_login_web_page.Springmvc_login_system.service;
 
+import com.spring_login_web_page.Springmvc_login_system.model.ApplicationUser;
 import com.spring_login_web_page.Springmvc_login_system.model.LoginResponseDTO;
 import com.spring_login_web_page.Springmvc_login_system.repository.RoleRepository;
 import com.spring_login_web_page.Springmvc_login_system.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 //import static jdk.internal.icu.impl.Punycode.encode;
 
@@ -19,15 +24,16 @@ public class AuthenticationalService {
     private UserRepository userRepository;
     @Autowired
     private RoleRepository roleRepository;
-    private String username;
+//    @Autowired
+    public String username;
     private String password;
-
+    public String userid;
     @Autowired
     private AuthenticationManager authenticationManager;
     @Autowired
     private TokenService tokenService;
     private PasswordEncoder passwordEncoder;
-    boolean userRole = roleRepository.findByAuthority("USER");
+    ApplicationUser userRole = roleRepository.findByAuthority("USER");
 
     //@Autowired
     public LoginResponseDTO loginUsername(String username, String password) {
@@ -39,13 +45,27 @@ public class AuthenticationalService {
         return new LoginResponseDTO(null, "");
     }
 
-    //        @Autowired
-    public String registeruser(String username, String password) {
-        String password1 = passwordEncoder.encode(password);
-        return password1;
+    @Autowired
+    public List<User> getUsers() {
+        return userRepository.getAllUsers();
+    }
+    @Autowired
+    public String getUserById(String userid){
+        return userRepository.findUserById(username).orElseThrow(()-> HttpStatus.BAD_REQUEST,"UserId not Found!");
+    }
+    @Autowired
+    public String getUserByusername(String username){
+        return userRepository.findUserByUsername(username).orElseThrow(()-> HttpStatus.BAD_REQUEST,"UserId not Found!");
+    }
+    @Autowired
+    public String getUserBypassword(String password){
+        return userRepository.findUserBypassword(username).orElseThrow(()-> HttpStatus.BAD_REQUEST,"UserId not Found!");
     }
 
-    //            String password2 = password;
+    @Autowired
+    public String registeruser(String username, String password){
+        return "User is Registered Successfully!"+passwordEncoder.encode(password);
+    }
     public String encode(String password) {
         return password;
     }
@@ -55,6 +75,18 @@ public class AuthenticationalService {
         return password;
     }
 }
+//        String UsernameStaus=userRepository.findUserByUsername(username).orElseThrow(()-> HttpStatus.BAD_REQUEST,"User not Found!");
+       //  String UserpasswordStaus=userRepository.findUserBypassword(password).orElseThrow(()-> HttpStatus.BAD_REQUEST,"User not Found!");
+
+
+//        return passwordEncoder.encode(password)
+
+//        userRepository.findAll();
+
+
+    //            String password2 = password;
+
+
 //            }
 //    List<Authentication> authorities = new List<Authentication>();
 
