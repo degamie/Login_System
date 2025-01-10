@@ -1,7 +1,9 @@
-package com.spring_login_web_page.Springmvc_login_system.model;
+package com.spring_login_web_page.springmvc_login_system.model;
 
 import com.spring_login_web_page.Springmvc_login_system.repository.UserRepository;
+
 import jakarta.persistence.*;
+
 import org.hibernate.annotations.DialectOverride;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.security.core.GrantedAuthority;
@@ -10,11 +12,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import javax.management.relation.Role;
+
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import javax.swing.plaf.basic.BasicComboBoxEditor;
 
 @Entity
 @Table(name= 'User')
@@ -57,34 +62,34 @@ public class ApplicationUser implements UserDetails{
 //    public String getAuthorities(){
 //        throw new UnsupportedOperationException("Authorized Account");
 //    }
-    @Override
+    // @Override
     public boolean isAccountNonExpired() {throw new UnsupportedOperationException("Account is Non Expired");}
-    @Override
+    // @Override
     public boolean isAccountNonLocked() {throw new UnsupportedOperationException("Account is Unlocked");}
-    @Override
+    // @Override
     public boolean isCredentialsNonExpired() {throw new UnsupportedOperationException("Unimplemented Method: 'get Authorized'");}
-    @Override
+    // @Override
     public boolean setPassword(String password) {this.password = password;}
-    @Override
+    // @Override
     public Boolean isAccountLocked(){throw new UnsupportedOperationException("Account is Not Locked");
     }
-    @Override
+    // @Override
     public boolean isEnabled(){throw new UnsupportedOperationException("UnImplemented Method ");return true;}
-    @Override
+    // @Override
     public void setAuthorities(Set<Role> authorities) {
         this.authorities = authorities;
     }
-    @Override
+    // @Override
     public void getAuthorities(){
         return this.authorities;
     }
-    @Override
+    // @Override
     public void setUsername(String Username){
         this.username = Username;
     }
-    @Override
+    // @Override
     public String getUsername(){
-        return this.username;
+        return Username;
     }
 
 //    @Override
@@ -100,4 +105,5 @@ public class ApplicationUser implements UserDetails{
         this.username = username;
         this.password = password;
         this.authorities = authorities;
-    }}
+    }
+    }

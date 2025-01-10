@@ -1,6 +1,7 @@
 package com.spring_login_web_page.Springmvc_login_system.configuration;
 
 import com.spring_login_web_page.Springmvc_login_system.service.UserServices;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,11 +15,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 import static javax.management.Query.and;
+
 import static org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build;
+import org.springframework.security.config.http.SessionCreationPolicy;
 
 
 @Configuration
 public class SecurityConfiguration {
+    @Autowired
     private UserServices userServices;
 
     PasswordEncoder passwordEncoder() {
@@ -44,6 +48,21 @@ public class SecurityConfiguration {
         return http.csrf(csrf->csrf.disable())
                 .authorizeRequests(auth->auth.requestMatchers("/auth*").permitAll())
                 .build();
+
+    }
+    // public SecurityFi
+    public void configure(HttpSecurity httpSecurity)throws Exception{
+        httpSecurity    
+                    .csrf().disable()
+                    .cors().disable()
+                    .authorizeHttpRequests(null)
+                    .antMatchers("/login","register/{user}").permitAll()
+                    .session()
+                    .sessionManagement()
+                    .and()
+                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                    return httpSecurity; 
+                    
 
     }
 
