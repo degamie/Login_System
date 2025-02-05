@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 public class UserController {
-    @GetMapping("/user")
-    public String AccessUserPage() {return "User Page Is Successfully Accessed";}
+    @GetMapping("/user/req/login")
+    public String AccessUserPage() {return "Login Page Is Successfully Accessed By User";}
+    @GetMapping("/user/req/register")
+    public String AccessUserPage() {return "Register Page Is Successfully Accessed By User";}
+    @GetMapping("/user/req/signup")
+    public String AccessUserPage() {return "Signup Page Is Successfully Accessed By User";}
+
 }
