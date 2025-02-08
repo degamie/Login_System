@@ -32,11 +32,12 @@ public class AuthenticationController {
     @Autowired
     public ApplicationUser registerUser(@RequestBody RegisterationDTO Body) {
         return "Authentication User Services "+authenticationservice.registerUser(Body.getUsername(),Body.getPassword())
-
-        }
-        @PostMapping("/User/auth/Admin")
-
-        public ResponseEntity<?,?> authenticateUser(@RequestBody @valid AuthenticationalService authenticationservice){
-            Authentication Authentication=AuthenticationManager.authenticate(new UserName,Password AuthenticationToken(RegisterableService.getUsername(),RegsiterbleService.getPassword()));
-        } 
     }
+}
+        // }
+        // @PostMapping("/User/auth/Admin")
+
+        // public ResponseEntity<?,?> authenticateUser(@RequestBody @valid AuthenticationalService authenticationservice){
+        //     Authentication Authentication=AuthenticationManager.authenticate(new UserName,Password AuthenticationToken(RegisterableService.getUsername(),RegsiterbleService.getPassword()));
+        // } 
+  

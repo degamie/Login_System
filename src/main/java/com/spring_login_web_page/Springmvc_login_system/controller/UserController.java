@@ -15,8 +15,8 @@ public class UserController {
     @GetMapping("/user/req/login")
     public String AccessUserPage() {return "Login Page Is Successfully Accessed By User";}
     @GetMapping("/user/req/register")
-    public String AccessUserPage() {return "Register Page Is Successfully Accessed By User";}
+    public String RegisterAccessUserPage() {return "Register Page Is Successfully Accessed By User";}
     @GetMapping("/user/req/signup")
-    public String AccessUserPage() {return "Signup Page Is Successfully Accessed By User";}
+    public String SignupAccessUserPage() {return "Signup Page Is Successfully Accessed By User";}
 
 }

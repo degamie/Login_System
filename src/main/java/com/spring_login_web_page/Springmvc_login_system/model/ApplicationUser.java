@@ -24,6 +24,13 @@ import javax.swing.plaf.basic.BasicComboBoxEditor;
 @Entity
 @Table(name= 'User')
 public class ApplicationUser implements UserDetails{
+    public ApplicationUser(Integer userid, String username, String password, Set<Role> authorities) {
+        super();
+        this.userid = userid;
+        this.username = username;
+        this.password = password;
+        this.authorities = authorities;
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 //    @Column(name="userid")
@@ -99,11 +106,5 @@ public class ApplicationUser implements UserDetails{
                 ()->new UsernameNotFoundException;
         );
     }
-    public ApplicationUser(Integer userid, String username, String password, Set<Role> authorities) {
-        super();
-        this.userid = userid;
-        this.username = username;
-        this.password = password;
-        this.authorities = authorities;
-    }
+
     }
