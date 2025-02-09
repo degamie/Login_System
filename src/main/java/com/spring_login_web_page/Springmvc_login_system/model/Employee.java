@@ -1,3 +1,5 @@
+import jakarta.annotation.Generated;
+
 @Getter
 @Setter
 @AllArgConstructor
@@ -6,7 +8,7 @@
 @Table(name="Employee")
 public class Employee{
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Generated(strategy=GeneratedValue.AUTO)
   
     public String empId;
     public String empName;
