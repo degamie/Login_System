@@ -19,7 +19,15 @@ public class AuthenticationalService {
     private UserRepository userRepository;
    @Autowired
     private RoleRepository roleRepository;
-    
+    public String setAllUsersById(String userId){
+        return userRepository.findAllUsersById(userId);
+    }
+    public String setAllUsersByName(String Name){
+        return userRepository.findByUsername(Name);
+    }
+    public String setAllUsersByPassword(String Password){
+        return userRepository.findAllUsersByPassword(Password);
+    }
     public String getAllUserByid(String username){
         return userRepository.save(username);
     }
