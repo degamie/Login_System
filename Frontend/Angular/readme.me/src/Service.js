@@ -1,15 +1,16 @@
 var app=angular.module('new Angular App')
-app.factory('Service',function{
+app.factory('Service'){
+    // Boolean isAuthenticated=false;
     admin='admin';
     password='password',
-    var isAuthenticated=false;
+    //  isAuthenticated=false;
     return{
         login:function(username,password){
-            isAuthenticated=username===admin && ===password;
+            isAuthenticated=username===admin && password===password;
             return isAuthenticated;
         }
-        var isAuthenticated:function(){
-            return isAuthenticated;
-        }
+        // isAuthenticatedlogin:function(username,password){
+        //     console.log(isAuthenticated);
+        // }
     }
-});
+};
