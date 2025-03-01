@@ -14,15 +14,16 @@ public class AdminController {
         return "Admin Page Logged in";
     }
     @GetMapping("/admin/{Id}")
+    public String getAdminId() {
+        return "User is Accessing AdminId";
+    }  
+    @GetMapping("/admin/{Name}")
     public String getAdminName() {
         return "vUser is Accessing AdminName";
     }
-    @GetMapping("/admin/{Name}")
+
+    @GetMapping("/admin/{password}")
     public String getAdminpasswrd() {
         return "User is Accessing Adminpassword";
-    }
-    @GetMapping("/admin/{password}")
-    public String getAdminId() {
-        return "User is Accessing AdminId";
-    }
+    }   
 }

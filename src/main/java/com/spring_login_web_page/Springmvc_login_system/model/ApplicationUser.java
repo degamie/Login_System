@@ -2,9 +2,7 @@ package com.spring_login_web_page.springmvc_login_system.model;
 
 import com.spring_login_web_page.Springmvc_login_system.repository.UserRepository;
 
-import jakarta.persistence.*;
-
-import org.hibernate.annotations.DialectOverride;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -20,10 +18,15 @@ import java.util.List;
 import java.util.Set;
 
 import javax.swing.plaf.basic.BasicComboBoxEditor;
-
-@Entity
 @Table(name= 'User')
+@Entity
+
+// @EntityScan
+
 public class ApplicationUser implements UserDetails{
+    @Autowired
+    public UserRepository userRepository;
+
     public ApplicationUser(Integer userid, String username, String password, Set<Role> authorities) {
         super();
         this.userid = userid;
@@ -41,7 +44,10 @@ public class ApplicationUser implements UserDetails{
     private String password;
 
 //    private String message;
-    public Set<Role> authorities;
+    public Set<Role> authorities=new HashSet<>();
+    public Set<Role> getAuthorities(){
+        return this.authorities;
+    }
 
     public Integer getUserid() {return userid;}
     public void setUserid(int userid) {this.userid = userid;}
@@ -52,8 +58,6 @@ public class ApplicationUser implements UserDetails{
             joinColumns = {@JoinColumn(name='user_id')},
             inverseJoinColumns = {@JoinColumn(name='role_id')}
     )
-
-    @Override
     public ApplicationUser() {
         super();
         this.authorities = new HashSet<>();
@@ -87,24 +91,23 @@ public class ApplicationUser implements UserDetails{
         this.authorities = authorities;
     }
     // @Override
-    public void getAuthorities(){
-        return this.authorities;
-    }
+
     // @Override
     public void setUsername(String Username){
         this.username = Username;
     }
     // @Override
     public String getUsername(){
-        return Username;
+        return username;
     }
 
 //    @Override
     public String loadUserByUsername(String username) throws UsernameNotFoundException {
-        System.out.println("In the UserDetailsServices");
-        return UserRepository.findByUsername(username).orElseThrow(
-                ()->new UsernameNotFoundException;
-        );
+        // System.out.println("In the UserDetailsServices");
+        return UserRepository.findByUsername(username);
+         //     .orElseThrow
+        //         ()->new UsernameNotFoundException;
+        // );
     }
 
     }

@@ -1,10 +1,16 @@
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 import jakarta.annotation.Generated;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgConstructor
-@NoArgConstructor
-@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@EntityScan
 @Table(name="Employee")
 public class Employee{
     @Id

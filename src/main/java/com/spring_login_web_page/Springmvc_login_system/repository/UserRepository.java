@@ -9,9 +9,10 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<ApplicationUser, String> {
-    public List<ApplicationUser> getUserId(Integer UserId);
+    public String findByUsername(String username);
+    public String save();
+    public List<ApplicationUser> getAllUserId(Integer UserId);
+    public List<ApplicationUser>getAllUsername(String UserName);
+    public String getAllUserByPassword(String userPassword);
     public List<ApplicationUser>setUserId(Integer UserId);
-    static Optional<ApplicationUser> findByUsername(String username);
-    public List<ApplicationUser>getUsername(String UserName);
-
 }
