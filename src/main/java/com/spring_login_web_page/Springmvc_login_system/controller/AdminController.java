@@ -16,6 +16,10 @@ public class AdminController {
     public String getAdminName(String adminName){
         return adminServices.getAllAdminName(adminName);
     }
+    @GetMapping("/admin/{adminPassword}")
+    public String getAdminPassword(String adminPassword){
+        return adminServices.getAllAdminPassword(adminPassword);
+    }
     @GetMapping("/admin/")
     public String admin() {
         return "Admin Page Logged in";
