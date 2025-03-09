@@ -7,4 +7,7 @@ public class AdminServices {
     public String getAllNamesBYAdmin(String adminName){
         return adminrepository.getAllNamesBYAdmin(adminName);
     }
+    public String getAdminPassword(String adminPassword){
+        return adminrepository.getAdminPassword(adminPassword);
+    }
 }
