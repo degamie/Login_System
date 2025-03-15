@@ -13,9 +13,10 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @EnableWebMvc
 
-public class JwtokenAuthFilter {
+public class JwtokenAuthFilter extends JwtUtill{
     @Autowired 
     public Key secretKey;
+    @Autowired 
     public Key Keys;
     @Autowired
     public byte[] KeyBytes;
@@ -26,6 +27,8 @@ public class JwtokenAuthFilter {
         KeyBytes=Decoder.BASE_64.decode(secretKey);
         return Keys.hmacShaKeyFor(KeyBytes);
     }
+}
+public class JwtokenAuthFilter extends SecurityConfiguration{
     private String buildToken(Map<String extractClaims, UserDetails userDetails,JwtokenAuthFilter jwtokenAuthFilter2) { 
             throw new UnsupportedOperationException("Unimplemented method 'buildToken'");
 }
@@ -33,6 +36,4 @@ public class JwtokenAuthFilter {
         return buildToken(extractClaims,userDetails,jwtokenAuthFilter);
     }
 
-
-    
 }
