@@ -16,6 +16,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class AdminController {
     @AutoWired
     public AdminServices adminServices;
+    @GetMapping("/admin/{adminPhoneNum}")
+    public String getAllAdminByPhoneNum(String PhoneNum) {
+        return adminServices.getAllAdminByPhoneNum(PhoneNum);
+    }
+    
     @GetMapping("/admin/{adminId}")
     public String getAllIdBYAdmin(String adminId) {
         return adminServices.getAllIdBYAdmin(adminId);
