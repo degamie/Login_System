@@ -1,7 +1,9 @@
 package com.spring_login_web_page.Springmvc_login_system.controller;
 
 import com.spring_login_web_page.springmvc_login_system.service.UserServices;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +28,10 @@ public class UserController {
 
     @Autowired
     public UserServices UserService;
+    @GetMapping("/User/{Id}")
+    public User getAllUserId(String Id){
+        return UserService.getAllUserPassword(Id);
+    }
     @GetMapping("/User/{Password}")
     public String getAllUserPassword(@RequestParam String Password) {
         return UserServices.getAllUserPassword(Password);
@@ -34,6 +40,11 @@ public class UserController {
     public String getAllUsername(@RequestParam String username) {
         return UserService.getAllUsername(username);
     }
+    @GetMapping("/User/{proffession}")
+    public String getAllUserproffession(@RequestParam String proffession) {
+        return UserService.getAllUserproffession(proffession);
+    }
+
 
 
 }
