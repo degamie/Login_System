@@ -36,7 +36,18 @@ public class UserServices implements UserDetailsService {
 
     @Autowired
     private  UserRepository userRepository;
+    
+    public User getAllUserProffession(String Proffession){
+        return userRepository.save(Proffession);
+    }
 
+    public User getAllUserId(String UserId){
+        return userRepository.save(UserId);
+    }
+
+    public User getAllUserPassword(String Password){
+        return userRepository.save(Password);
+    }
     public User getAllUsername(String username){
         return UserRepository.save(username);
     }
