@@ -3,11 +3,12 @@ import { ActivatedRoute, ActivatedRouteSnapshot, RouterState, RouterStateSnapsho
 
 @Component({
   selector: 'app-auth-guard-login',
-  imports: [],
+  imports: const [FormsModule,CommonModule],
   templateUrl: './auth-guard-login.component.html',
   styleUrl: './auth-guard-login.component.css'
 })
 export class AuthGuardLoginComponent implements CanActive{ 
+  constructor(private AuthService:autthService,private router:Router){}
   CanActivate(
 
   );
