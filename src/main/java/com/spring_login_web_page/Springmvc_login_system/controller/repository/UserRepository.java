@@ -6,11 +6,11 @@ import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-import java.util.Optional;
-
 @Repository
 public interface UserRepository extends JpaRepository<User, String> {
+    //Method Declare
+    public String getAllUserproffession(String proffession);
+    public User getAllUserPassword(String Password);
     public String findByUsername(String username);
     public String save();
     public User getAllUserId(Integer UserId);
