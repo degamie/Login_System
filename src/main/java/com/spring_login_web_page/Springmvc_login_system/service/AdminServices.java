@@ -8,6 +8,9 @@ import com.spring_login_web_page.Springmvc_login_system.repository.AdminReposiot
 public class AdminServices {
     @AutoWired
     public AdminReposiotry adminrepository;
+    public List<Admin>setAllNamesBYAdmin (String adminName){
+            return adminrepository.findAllNamesBYAdmin(String adminName);
+        }
     public String getAllAdminBYPhoneNum(String PhoneNum){
         return adminrepository.getAllAdminBYPhoneNum(PhoneNum);
     }
