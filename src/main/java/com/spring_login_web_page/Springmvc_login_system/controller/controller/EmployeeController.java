@@ -16,6 +16,10 @@ import com.spring_login_web_page.Springmvc_login_system.model.Employee;
 public class EmployeeController{
     @AutoWired 
     public EmpServiceImpl empService;
+    @GetMapping("/Emp/{Id}")
+    public List<Employee>getAllEmpById(String EmpId){//Empl Id getMoethod
+        return empService.getAllEmpId(EmpId);//Printing Empl Id's Fetch
+    }
     @GetMapping("/Emp/{username}")
     public Employee getAllUserByName(String Empname) {
         return empService.getAllEmpName(Empname);
