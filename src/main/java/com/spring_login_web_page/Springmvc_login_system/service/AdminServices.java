@@ -1,5 +1,7 @@
 package com.spring_login_web_page.Springmvc_login_system.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.spring_login_web_page.Springmvc_login_system.repository.AdminReposiotry;
@@ -8,7 +10,10 @@ import com.spring_login_web_page.Springmvc_login_system.repository.AdminReposiot
 public class AdminServices {
     @AutoWired
     public AdminReposiotry adminrepository;
-    public List<Admin>setAllNamesBYAdmin (String adminName){
+    public List<user>findAllAdminById(String AdminID){
+        return adminrepository.findAllAdminByID(AdminID)
+    }
+        public List<Admin>setAllNamesBYAdmin (String adminName){
             return adminrepository.findAllNamesBYAdmin(String adminName);
         }
     public String getAllAdminBYPhoneNum(String PhoneNum){
