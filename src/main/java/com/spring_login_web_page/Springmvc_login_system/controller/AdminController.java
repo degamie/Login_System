@@ -1,5 +1,7 @@
 package com.spring_login_web_page.Springmvc_login_system.controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +18,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class AdminController {
     @AutoWired
     public AdminServices adminServices;
+    @GetMapping("/admin/set/{AdminID}")
+    public List<user>findAllAdminById(String AdminID){
+        return adminServices.findAllAdminById(AdminID);
+    }
+       @PostMapping("/admin/set/{adminName}")
+         public List<Admin>setAllNamesBYAdmin (String adminName){
+            return adminServices.setAllAdminByPhoneNum(adminName);
+         }
+      
+    @GetMapping("/admin/{adminPhoneNum}")
+    public String getAllAdminByPhoneNum(String PhoneNum) {
+        return adminServices.getAllAdminByPhoneNum(PhoneNum);
+    }
+    
     @GetMapping("/admin/{adminId}")
     public String getAllIdBYAdmin(String adminId) {
         return adminServices.getAllIdBYAdmin(adminId);
