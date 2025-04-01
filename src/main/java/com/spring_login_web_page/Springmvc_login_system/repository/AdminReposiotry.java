@@ -4,6 +4,7 @@ import java.util.List;
 
 @Repository
 public class AdminReposiotry extends JpaRepository<Admin,String>{
+    public List<user>findAllAdminById(String AdminID);
     public List<Admin> findAllNamesBYAdmin (String adminName); 
     public List<Admin>setAllNamesBYAdmin (String adminName);
     public List<Admin> getAllAdminBYPhoneNum (String PhoneNum);
