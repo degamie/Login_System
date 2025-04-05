@@ -2,6 +2,16 @@ var app=angular.module('MyLoginPAge','ui','router');
 app.run(function($rootScope,$location,$state,LoginTest));
 console.clear();
 console.log("executing Login  Page");
+function authInterceptor(API,auth){
+    return {
+      request:function(config){
+        return config;
+      }
+      reponse:function(out);
+      return out;
+
+    }
+}
 public void login(username:String,password:String){
   this.authenticationClient.login(username,password).subscribe((token))=>{
     localStorage.setItem(this.tokenKey,token);
