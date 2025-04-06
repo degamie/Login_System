@@ -1,12 +1,9 @@
-package com.spring_login_web_page.Springmvc_login_system.repository;
 
 import java.util.List;
 
-import com.spring_login_web_page.Springmvc_login_system.model.Employee;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public class EmpRepository extends JpaRepository<Employee,String>{
-    public List<Employee>getAllEmpByRole(String role);
-    public List<Employee>getEmpName(String EmpName); 
-    public List<Employee>getEmpPassword(String Password); 
-} 
+public interface EmpRepository extends JpaRepository<Employee,String>{//EmplOyee repository Declare
+    public List<Employee>getAllEmpById(String EmpId);//EmplOyee Id Method declare
+    public List<Employee>getAllEmpByName(String EmpName);//EmpName Method declare
+}
