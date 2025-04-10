@@ -18,6 +18,10 @@ import com.spring_login_web_page.Springmvc_login_system.service.EmpServiceImpl;
 public class EmployeeController{
     @AutoWired 
     public EmpServiceImpl empService;
+    @GetMapping("/Emp/{Password}")
+    public List<Employee>getAllEmpByPassword(String Password){
+        return empService.getAllEmpByPassword(Password);
+    }
     @GetMapping("/Emp/{role}")
     public List<Employee>getAllEmpByRole(String role){
             return empService.getAllEmpByRole(role);
