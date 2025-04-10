@@ -13,5 +13,8 @@ public class EmpServiceImpl {
     public Employee getAllEmpPassword(String EmpPassword){
         return EmpRepository.save(EmpPassword);
     }
+    public List<Employee>getAllEmpByPassword(String Password){
+    return EmpRepository.getAllEmpByName(Password);
+}
     
 }
