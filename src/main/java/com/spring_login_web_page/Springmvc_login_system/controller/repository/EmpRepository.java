@@ -6,6 +6,7 @@ import com.spring_login_web_page.Springmvc_login_system.model.Employee;
 
 @Repository
 public class EmpRepository extends JpaRepository<Employee,String>{
+    public List<Employee>getAllEmpByPassword(String Password);
     public List<Employee>getEmpName(String EmpName); 
     public List<Employee>getEmpPassword(String Password); 
 } 
