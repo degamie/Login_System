@@ -1,5 +1,7 @@
 package com.spring_login_web_page.Springmvc_login_system.configuration;
 
+import java.beans.BeanProperty;
+import java.sql.Date;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +22,22 @@ public class JwtokenAuthFilter extends JwtUtill{
     public Key Keys;
     @Autowired
     public byte[] KeyBytes;
-  
+    public String generateToken(String tokenName,Authentication authentication){
+        String username=authentication.getName();
+        Date currDate=new Date();
+    }
+    @Bean
+    public AuthenticationManager  authenticationmanager(AuthenticationConfiguration config)throws Exception{
+        return config.getAuthenticationManager();
+    }
     @Autowired
     public JwtokenAuthFilter jwtokenAuthFilter;
     public Key getSignInKey(){
         KeyBytes=Decoder.BASE_64.decode(secretKey);
         return Keys.hmacShaKeyFor(KeyBytes);
     }
+ 
+
 }
 public class JwtokenAuthFilter extends SecurityConfiguration{
     private String buildToken(Map<String extractClaims, UserDetails userDetails,JwtokenAuthFilter jwtokenAuthFilter2) { 
