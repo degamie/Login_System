@@ -1,4 +1,4 @@
-package com.spring_login_web_page.Springmvc_login_system.controller;
+package com.spring_login_web_page.Spring_login_system.controller;
 import java.util.List;
 import java.util.concurrent.ExecutorCompletionService;
 
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.spring_login_web_page.Springmvc_login_system.model.Employee;
+import com.spring_login_web_page.Springmvc_login_system.repository.EmpRepository;
 import com.spring_login_web_page.Springmvc_login_system.service.EmpServiceImpl;
 
 
@@ -18,6 +19,14 @@ import com.spring_login_web_page.Springmvc_login_system.service.EmpServiceImpl;
 public class EmployeeController{
     @AutoWired 
     public EmpServiceImpl empService;
+    @GetMapping("/Emp/{PhoneNum}")
+    public List<Employee>getAllEmpByPhoneNum(String PhoneNum){
+        return empService.getAllEmpByPhoneNum(PhoneNum);
+    }
+    @GetMapping("/Emp/{Password}")
+    public List<Employee>getAllEmpByPassword(String Password){
+        return empService.getAllEmpByPassword(Password);
+    }
     @GetMapping("/Emp/{role}")
     public List<Employee>getAllEmpByRole(String role){
             return empService.getAllEmpByRole(role);
@@ -34,8 +43,6 @@ public class EmployeeController{
     public Employee getAllUserByPassword(String Password) {
         return empService.getAllUserByPassword(Password);
     }
-
-    
     @PostMapping(path="save")
     public String saveEmp(@RequestBody EmpDto empDto) {
         String empId=empService.addEmp(empDto);
