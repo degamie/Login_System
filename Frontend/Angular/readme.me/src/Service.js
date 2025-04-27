@@ -3,6 +3,10 @@ app.factory('Service'){
     // Boolean isAuthenticated=false;
     admin='admin';
     password='password',
+    constructor(admin,password){
+        this.admin=admin;
+        this.password=password;
+    }
     //  isAuthenticated=false;
     return{
         login:function(username,password){
