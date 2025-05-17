@@ -2,6 +2,7 @@ package com.spring_login_web_page.Springmvc_login_system.service;
 
 import java.util.List;
 
+import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Admin;
 import org.springframework.stereotype.Service;
 
 import com.spring_login_web_page.Springmvc_login_system.repository.AdminReposiotry;
@@ -10,12 +11,18 @@ import com.spring_login_web_page.Springmvc_login_system.repository.AdminReposiot
 public class AdminServices {
     @AutoWired
     public AdminReposiotry adminrepository;
+        public List<Admin>getAllAdminById(String AdminID){
+            return adminrepository.getAllAdminById(AdminID);
+        }
     public List<user>findAllAdminById(String AdminID){
-        return adminrepository.findAllAdminByID(AdminID)
+        return adminrepository.findAllAdminByID(AdminID);
     }
         public List<Admin>setAllNamesBYAdmin (String adminName){
             return adminrepository.findAllNamesBYAdmin(String adminName);
         }
+    public void setAllAdminBYPhoneNum(String PhoneNum){
+        return adminrepository.findAllAdminBYPhoneNum(PhoneNum);
+    }
     public String getAllAdminBYPhoneNum(String PhoneNum){
         return adminrepository.getAllAdminBYPhoneNum(PhoneNum);
     }
