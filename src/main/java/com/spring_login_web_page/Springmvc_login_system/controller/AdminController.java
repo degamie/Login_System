@@ -18,10 +18,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class AdminController {
     @AutoWired
     public AdminServices adminServices;
-    @GetMapping("/admin/set/{AdminID}")
-    public List<user>findAllAdminById(String AdminID){
-        return adminServices.findAllAdminById(AdminID);
+    public String PhoneNum;
+    @PostMapping("/Admin/{set}/PhoneNum")
+    public void setAllAdminBYPhoneNum(String PhoneNum){
+return adminServices.setAllAdminBYPhoneNum(PhoneNum);
     }
+    @GetMapping("/admin/set/{AdminID}")
+    public List<Admin>getAllAdminById(String AdminID){return adminrepository.getAllAdminById(AdminID);}//fetching AdminId
+      
+    // @GetMapping("/admin/set/{AdminID}")
+    // public List<user>findAllAdminById(String AdminID){
+    //     return adminServices.findAllAdminById(AdminID);
+    // }
        @PostMapping("/admin/set/{adminName}")
          public List<Admin>setAllNamesBYAdmin (String adminName){
             return adminServices.setAllAdminByPhoneNum(adminName);
