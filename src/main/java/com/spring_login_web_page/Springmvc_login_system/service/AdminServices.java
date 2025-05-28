@@ -5,15 +5,18 @@ import java.util.List;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Admin;
 import org.springframework.stereotype.Service;
 
-import com.spring_login_web_page.Springmvc_login_system.repository.AdminReposiotry;
+import org.spring_login_web_page.Springmvc_login_system.repository.AdminReposiotry;
 
 @Service
 public class AdminServices {
     @AutoWired
-    public AdminReposiotry adminrepository;
+    public com.spring_login_web_page.Springmvc_login_system.repository.AdminReposiotry adminrepository;
         public List<Admin>getAllAdminById(String AdminID){
             return adminrepository.getAllAdminById(AdminID);
         }
+    public String setAllIdBYAdmin (String adminName);{
+        return adminrepository.setAllNamesBYAdmin(adminName);
+    }
     public List<user>findAllAdminById(String AdminID){
         return adminrepository.findAllAdminByID(AdminID);
     }
