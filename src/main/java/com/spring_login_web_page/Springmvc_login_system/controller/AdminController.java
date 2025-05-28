@@ -2,8 +2,10 @@ package com.spring_login_web_page.Springmvc_login_system.controller;
 
 import java.util.List;
 
+import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Admin;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,25 +18,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/admin/")
 @CrossOrigin("*")
 public class AdminController {
-    @AutoWired
+    @Autowired
     public AdminServices adminServices;
-    public String PhoneNum;
-    @PostMapping("/Admin/{set}/PhoneNum")
-    public void setAllAdminBYPhoneNum(String PhoneNum){
-return adminServices.setAllAdminBYPhoneNum(PhoneNum);
-    }
-    @GetMapping("/admin/set/{AdminID}")
-    public List<Admin>getAllAdminById(String AdminID){return adminrepository.getAllAdminById(AdminID);}//fetching AdminId
-      
-    // @GetMapping("/admin/set/{AdminID}")
-    // public List<user>findAllAdminById(String AdminID){
-    //     return adminServices.findAllAdminById(AdminID);
-    // }
-       @PostMapping("/admin/set/{adminName}")
-         public List<Admin>setAllNamesBYAdmin (String adminName){
+    @PostMapping("/admin/set/{adminName}")
+        public List<Admin>setAllNamesBYAdmin (String adminName){
             return adminServices.setAllAdminByPhoneNum(adminName);
-         }
-      
+    }
+    @PostMapping("/Admin/{AdminName}")
+    public String setAllNameBYAdmin (String adminName){return adminServices.setAllNamesBYAdmin(adminName);}//Inseritng The AdminName Val
+
+    public List<user>findAllAdminById(String AdminID){
+        return adminrepository.findAllAdminByID(AdminID);
+    }
+    public String getMethodName(@RequestParam String param) {
+        return new String();
+    }
+    
     @GetMapping("/admin/{adminPhoneNum}")
     public String getAllAdminByPhoneNum(String PhoneNum) {
         return adminServices.getAllAdminByPhoneNum(PhoneNum);
