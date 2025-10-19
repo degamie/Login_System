@@ -7,6 +7,7 @@ import java.util.Optional;
 
 public interface RoleRepository extends JpaRepository<Role, Integer> {
     public String saveAllByUserId(String UserId);
+    public String saveAllByUserPassword(String UserPassword);
     Optional<Role> findByName(String name);
     Optional<Role> findByAuthority(String authority);
 }
