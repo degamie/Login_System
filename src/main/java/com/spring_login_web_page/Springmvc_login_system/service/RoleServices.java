@@ -9,4 +9,5 @@ import org.springframework.stereotype.Service;
         @Autowired
         public RoleRepository roleRepository;
         public String getAllByUserId(String UserId){return roleRepository.saveAllByUserId(UserId); }
+     public String getAllByUserPassword (String UserPassword){return roleRepository.saveAllByUserPassword(UserPassword);}
 }
