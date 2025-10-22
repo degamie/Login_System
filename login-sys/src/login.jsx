@@ -11,6 +11,12 @@ function login() {
 
   return (
       <h2>Login Form</h2>
+      <form className="App" OnSubmit={handleSubmit(OnSubmit)}>
+          <input
+            type="Email",
+            {register("email")}
+            {required:true}
+            placeholder="Email"/>
     <div>login</div>
   )
 }
