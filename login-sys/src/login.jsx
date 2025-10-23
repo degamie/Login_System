@@ -13,10 +13,19 @@ function login() {
       <h2>Login Form</h2>
       <form className="App" OnSubmit={handleSubmit(OnSubmit)}>
           <input
-            type="Email",
+            type="Email"
             {register("email")}
             {required:true}
             placeholder="Email"/>
+ {errors.email && <span style= {{<color:"red"}}>*Email* is compulsory</span>}
+              <input
+                        type="Password"
+                        {register("Password")}
+                        {required:true}
+                        placeholder="Password"/>
+                          {errors.Password && <span style= {{<color:"red"}}>*Password* is compulsory</span>}
+              <input type="Submit" style={backgroundColor:"#a1eafb"}>
+
     <div>login</div>
   )
 }
