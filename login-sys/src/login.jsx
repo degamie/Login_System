@@ -1,6 +1,9 @@
 import React from 'react'
 
 function login() {
+  const getData=(data)=>{
+    return data;
+  }
     const onSubmit = (data) => {
         const userData=localStorage.setItem("data.email", JSON.stringify({name: data.name, password: data.password}));
         if(userData){
