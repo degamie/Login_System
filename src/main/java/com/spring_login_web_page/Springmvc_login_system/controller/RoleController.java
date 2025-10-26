@@ -14,5 +14,8 @@ public class RoleController {
     public String getAllByUserPassword (String UserPassword){return roleServices.getAllByUserPassword(UserPassword);}
     @GetMapping("/roles/saveAll/{UserName}")
  public String getAllByUserName(String UserName){return roleRepository.saveAllByUserName(UserName);}
+    @GetMapping("/saveAll/{authority}")
+    public String getAllByauthority(String authority){return roleServices.getAllByauthority(authority);}
+
     
 }
