@@ -11,4 +11,5 @@ import org.springframework.stereotype.Service;
         public String getAllByUserId(String UserId){return roleRepository.saveAllByUserId(UserId); }
      public String getAllByUserPassword (String UserPassword){return roleRepository.saveAllByUserPassword(UserPassword);}
          public String getAllByUserName(String UserName){return roleRepository.saveAllByUserName(UserName);}
+     public String getAllByauthority(String authority){return roleRepository.saveAllByauthority(authority);}
 }
