@@ -17,10 +17,16 @@ public class UserController {
     public  UserServices userServices;
     @GetMapping("/user")
     public String AccessUserPage() {return "User Page Is Successfully Accessed";}
-    @GetMapping("/saveAll/{Authorities]")
+   @GetMapping("/saveAll/{Authorities]")
     public String getAllBYAuthorities(@RequestParam List<SecurityProperties.User> Authorities, @RequestBody ApplicationUser applicationUser){
         return  userServices.getAllBYAuthorities(Authorities);
     }
-
-
+    @GetMapping("/saveAll/{Password}")
+    public String getAllByPassword(String Password){
+        return userServices.getAllByPassword(Password);
+    }
+    @PostMapping("/findAll/{PhoneNumber}")
+    public String setAllByUserPhoneNumber(String PhoneNumber){//Retrieving PhoneNumber in Server
+        return userServices.setAllByUserPhoneNumber(PhoneNumber);
+    }
 }
