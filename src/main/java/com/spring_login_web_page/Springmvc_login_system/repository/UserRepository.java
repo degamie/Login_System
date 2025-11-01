@@ -15,5 +15,7 @@ public interface UserRepository extends JpaRepository<ApplicationUser, String> {
     static Optional<ApplicationUser> findByUsername(String username);
     public String saveAllBYAuthorities(List<SecurityProperties.User>Authorities);
     public List<ApplicationUser>getUsername(String UserName);
+    public String saveAllByPassword(String Password);
+    public void findAllByUserPhoneNumber(String PhoneNumber);
 
 }
