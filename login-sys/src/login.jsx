@@ -13,7 +13,11 @@ const setData=(data)=>{
                 console.log(userData.name+"Logged In Successfully!");}
             }
         else console.log("User Email and Password Unmatched");
+          }
+          const getPassword=(data.Password)=>{return Password;}
+          const setPassword=(data.Password)=>{ this.Password=Password;}//Binding Password
 
+          const getEmail=(data.email)=>{return email;}//Fetching Email in Server
   return (
       <h2>Login Form</h2>
       <form className="App" OnSubmit={handleSubmit(OnSubmit)}>
