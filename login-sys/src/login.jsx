@@ -1,5 +1,6 @@
 import React from 'react'
 
+//WID(7/11/2025)//Sarthak Mittal (Degamiesign)
 function login() {
   const getData=(data)=>{
     return data;
@@ -18,6 +19,8 @@ const setData=(data)=>{
           const setPassword=(data.Password)=>{ this.Password=Password;}//Binding Password
 
           const getEmail=(data.email)=>{return email;}//Fetching Email in Server
+          const setEmail=(data.email)=>{return email;}// Retrieving Email in Server
+          const updateAllByEmail=(data.email)=>{getEmail(email)+setEmail(email);}//Updating All Emails in Server
   return (
       <h2>Login Form</h2>
       <form className="App" OnSubmit={handleSubmit(OnSubmit)}>
