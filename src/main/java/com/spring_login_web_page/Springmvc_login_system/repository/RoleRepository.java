@@ -11,8 +11,10 @@ public interface RoleRepository extends JpaRepository<Role, Integer> {
     public String findAllByUserId(String UserId);
     public String saveAllByUserId(String UserId);
     public String saveAllByUserPassword(String UserPassword);
+   public String findAllByUserPassword(String UserPassword );
     Optional<Role> findByName(String name);
     public String saveAllByUserName(String UserName);
     Optional<Role> findByAuthority(String authority);
     public String saveAllByauthority(String authority);
+     public String saveAllPhoneNumber(String PhoneNumber);
 }
