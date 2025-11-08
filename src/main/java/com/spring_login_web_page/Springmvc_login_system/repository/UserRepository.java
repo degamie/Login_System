@@ -18,5 +18,7 @@ public interface UserRepository extends JpaRepository<ApplicationUser, String> {
     public String saveAllByPassword(String Password);
     public void findAllByUserPhoneNumber(String PhoneNumber);
     public String saveAllByUserPhoneNumber(String PhoneNumber);//Fetching User's Phone Number in Server
+    public String saveAllByUserEmail(String USerEmail);//Fetching UserEmail in Server
+
 
 }
