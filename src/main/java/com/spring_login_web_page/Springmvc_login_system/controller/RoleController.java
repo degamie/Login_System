@@ -16,6 +16,9 @@ public class RoleController {
  public String getAllByUserName(String UserName){return roleRepository.saveAllByUserName(UserName);}
     @GetMapping("/saveAll/{authority}")
     public String getAllByauthority(String authority){return roleServices.getAllByauthority(authority);}
-
+    @GetMapping("/saveAll/{PhoneNumber}")//Fetching PhoneNumber in Server
+    public String getAllPhoneNumber(String PhoneNumber){
+        return roleServices.getAllPhoneNumber(PhoneNumber);
+    }
     
 }
