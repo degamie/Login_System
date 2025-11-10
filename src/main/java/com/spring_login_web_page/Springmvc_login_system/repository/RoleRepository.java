@@ -1,4 +1,4 @@
-package com.spring_login_web_page.Springmvc_login_system.repository;
+package com.spring_login_web_page.Springmvc_login_system.repository.src.main.java.com.spring_login_web_page.Springmvc_login_system.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -17,4 +17,5 @@ public interface RoleRepository extends JpaRepository<Role, Integer> {
     Optional<Role> findByAuthority(String authority);
     public String saveAllByauthority(String authority);
      public String saveAllPhoneNumber(String PhoneNumber);
+     public void findAllPhoneNumber(String PhoneNumber);//Finding PhoneNumber in Server
 }
