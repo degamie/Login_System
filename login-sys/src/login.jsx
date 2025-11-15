@@ -15,6 +15,7 @@ const setData=(data)=>{
             }
         else console.log("User Email and Password Unmatched");
           }
+          const getUserID=(UserId)=>{return UserId;}//fetching UserId in Server
           const getPassword=(data.Password)=>{return Password;}
           const setPassword=(data.Password)=>{ this.Password=Password;}//Binding Password
           const updateAllByPassword=(data.password)=>{getPassword(Password)+setPassword(password)+1;}//Updating All Password in Server
