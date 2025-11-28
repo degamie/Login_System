@@ -1,6 +1,6 @@
 import React from 'react'
 
-//WID(16/11/2025)//Sarthak Mittal (Degamiesign)
+//WID(28/11/2025)//Sarthak Mittal (Degamiesign)
 function login() {
   const getData=(data)=>{
     return data;
@@ -16,6 +16,7 @@ const setData=(data)=>{
         else console.log("User Email and Password Unmatched");
           }
       const getAllByUserName=(UserName)=>{return UserName;}//Fetching UserNAme in Server
+      const setAllByUserName=(UserName)=>{this.UserNAme=UserNAme;}//Binding UserName in Server
           const getUserID=(UserId)=>{return UserId;}//fetching UserId in Server
           const setUserId=(UserId)=>{this.UserId=UserId;}//Binding UserId In Server
           const getPassword=(data.Password)=>{return Password;}
