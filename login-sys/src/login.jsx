@@ -1,6 +1,6 @@
 import React from 'react'
 
-//WID(28/11/2025)//Sarthak Mittal (Degamiesign)
+//WID(2/12/2025)//Sarthak Mittal (Degamiesign)
 function login() {
   const getData=(data)=>{
     return data;
@@ -17,6 +17,7 @@ const setData=(data)=>{
           }
       const getAllByUserName=(UserName)=>{return UserName;}//Fetching UserNAme in Server
       const setAllByUserName=(UserName)=>{this.UserNAme=UserNAme;}//Binding UserName in Server
+      const updateAllByUserName=(UserName)=>{getAllByUserName(UserName)+setAllByUserName(UserNa)+1};//Udpating UserNAme in app
           const getUserID=(UserId)=>{return UserId;}//fetching UserId in Server
           const setUserId=(UserId)=>{this.UserId=UserId;}//Binding UserId In Server
           const getPassword=(data.Password)=>{return Password;}
