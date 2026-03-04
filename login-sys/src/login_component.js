@@ -1,6 +1,7 @@
-//WIP(04/03/2026)(Sarthak Mittal)#1.1.1.1C
+//WIP(04/03/2026)(Sarthak Mittal)#1.1.1.1.1
 import React,{useState} from 'react';
-function login{
+function login(){
+    register,
 const [email,setEmail]=useState('');
 const [password,setPassword]=useState('');
 const [error,seterror]=useState('');
