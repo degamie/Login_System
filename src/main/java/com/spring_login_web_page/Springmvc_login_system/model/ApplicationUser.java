@@ -1,8 +1,10 @@
-package com.spring_login_web_page.springmvc_login_system.model;
+package com.spring_login_web_page.Springmvc_login_system.model;
 
 import com.spring_login_web_page.Springmvc_login_system.repository.UserRepository;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.persistence.*;
+
+import org.hibernate.annotations.DialectOverride;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -18,22 +20,10 @@ import java.util.List;
 import java.util.Set;
 
 import javax.swing.plaf.basic.BasicComboBoxEditor;
-@Table(name= 'User')
+
 @Entity
-
-// @EntityScan
-
+@Table(name= "User")
 public class ApplicationUser implements UserDetails{
-    @Autowired
-    public UserRepository userRepository;
-
-    public ApplicationUser(Integer userid, String username, String password, Set<Role> authorities) {
-        super();
-        this.userid = userid;
-        this.username = username;
-        this.password = password;
-        this.authorities = authorities;
-    }
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 //    @Column(name="userid")
@@ -44,20 +34,19 @@ public class ApplicationUser implements UserDetails{
     private String password;
 
 //    private String message;
-    public Set<Role> authorities=new HashSet<>();
-    public Set<Role> getAuthorities(){
-        return this.authorities;
-    }
+    public Set<Role> authorities;
 
     public Integer getUserid() {return userid;}
     public void setUserid(int userid) {this.userid = userid;}
 
-    @ManyToMany(fetch = FetchType.EAGER)
+//  userid  @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = 'user_role_junction',
             joinColumns = {@JoinColumn(name='user_id')},
             inverseJoinColumns = {@JoinColumn(name='role_id')}
     )
+
+    @Override
     public ApplicationUser() {
         super();
         this.authorities = new HashSet<>();
@@ -69,7 +58,13 @@ public class ApplicationUser implements UserDetails{
 
     @Override
     public String getPassword(){return "";}
-//    @Override
+
+    @Override
+    public String getUsername() {
+        return "";
+    }
+
+    //    @Override
 //    public String getAuthorities(){
 //        throw new UnsupportedOperationException("Authorized Account");
 //    }
@@ -91,23 +86,30 @@ public class ApplicationUser implements UserDetails{
         this.authorities = authorities;
     }
     // @Override
-
+    public void getAuthorities(){
+        return this.authorities;
+    }
     // @Override
     public void setUsername(String Username){
         this.username = Username;
     }
     // @Override
-    public String getUsername(){
-        return username;
+    public String getUsername(String Username){
+        return Username;
     }
 
 //    @Override
     public String loadUserByUsername(String username) throws UsernameNotFoundException {
-        // System.out.println("In the UserDetailsServices");
-        return UserRepository.findByUsername(username);
-         //     .orElseThrow
-        //         ()->new UsernameNotFoundException;
-        // );
+        System.out.println("In the UserDetailsServices");
+        return UserRepository.findByUsername(username).orElseThrow(
+                ()->new UsernameNotFoundException;
+        );
     }
-
+    public ApplicationUser(Integer userid, String username, String password, Set<Role> authorities) {
+        super();
+        this.userid = userid;
+        this.username = username;
+        this.password = password;
+        this.authorities = authorities;
+    }
     }

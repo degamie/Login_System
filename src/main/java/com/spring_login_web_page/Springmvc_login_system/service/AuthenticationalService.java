@@ -2,7 +2,7 @@ package com.spring_login_web_page.Springmvc_login_system.service;
 
 import com.spring_login_web_page.Springmvc_login_system.model.ApplicationUser;
 import com.spring_login_web_page.Springmvc_login_system.repository.RoleRepository;
-import com.spring_login_web_page.Springmvc_login_system.repository.UserRepository;
+import com.spring_login_web_page.springmvc_login_system.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -15,33 +15,11 @@ import static jdk.internal.icu.impl.Punycode.encode;
 
 @Service
 public class AuthenticationalService {
-   @Autowired
-    private UserRepository userRepository;
-   @Autowired
+    @Autowired
+    public  UserRepository userRepository;
+    public String getAllByUserId(String UserId){return userRepository.saveAllByUserId(UserId); }
+//    @Autowired
     private RoleRepository roleRepository;
-    public User findByUserName(String username){
-        return userRepository.findByUserName(username);
-    }
-    public String setAllUsersById(String userId){
-        return userRepository.findAllUsersById(userId);
-    }
-    public String setAllUsersByName(String Name){
-        return userRepository.findByUsername(Name);
-    }
-    public String setAllUsersByPassword(String Password){
-        return userRepository.findAllUsersByPassword(Password);
-    }
-    public String getAllUserByid(String username){
-        return userRepository.save(username);
-    }
-    public String getAllUserByName(String username){
-        return userRepository.save(username);
-    }    
-    public String getAllUserByPassword(String userPassword){
-        return userRepository.save(userPassword);
-    }
-
-
 //    @Autowired
     ApplicationUser register(String username, String password) {
         Object encodedpassword = PasswordEncoder.encode(password);
@@ -52,4 +30,5 @@ public class AuthenticationalService {
     authorities.add(userRole);
     return userRepository.save(new ApplicationUser(0,username,encode(authorities)));
     }
+
 }
