@@ -1,6 +1,6 @@
-//WIP(06/03/2026)(Sarthak Mittal)#1.1.1.1.1.1.1.1
+//WIP(06/03/2026)(Sarthak Mittal)#1.1.1.1.1.1.1.1.1C        
 import React,{useState} from 'react';
-username=null;userId=null;
+username=null;userId=null;email=null;
 function login(){
    const {
     register,
