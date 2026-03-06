@@ -1,12 +1,16 @@
-//WIP(04/03/2026)(Sarthak Mittal)#1.1.1.1.1
+//WIP(06/03/2026)(Sarthak Mittal)#1.1.1.1.1.1.1.1
 import React,{useState} from 'react';
+username=null;userId=null;
 function login(){
+   const {
     register,
+       handleSubmit,formState:{errors},
+}=useForm();
+
 const [email,setEmail]=useState('');
 const [password,setPassword]=useState('');
 const [error,seterror]=useState('');
 var username="Sarthak";
-}
 const handleChane=(e)={
 setCredentials({...credentials,[e.target.name]:e.target.value});
 }
@@ -17,6 +21,7 @@ console.log("UserData Successfully logged in");
 else console.log("Email nd Password Not matched and Not Found!,Pls Try Again!");
 
 }
+
 return (
         <>
             <h2>Login Form</h2>
@@ -40,5 +45,6 @@ return (
             </form>
         </>
     );
+}
 }
 
