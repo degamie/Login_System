@@ -1,5 +1,7 @@
 package com.spring_login_web_page.springmvc_login_system.service;
 
+import com.spring_login_web_page.Springmvc_login_system.model.ApplicationUser;
+import com.spring_login_web_page.Springmvc_login_system.repository.UserRepository;
 import com.spring_login_web_page.springmvc_login_system.repository.UserRepository;
 import com.spring_login_web_page.springmvc_login_system.model.ApplicationUser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +30,9 @@ public class UserServices implements UserDetailsService {
     private PasswordEncoder passwordEncoder;
     @Autowired
     private ApplicationUser applicationUser;
+    public List<ApplicationUser> getByUserName(String UserName){
+        return  userRepository.findByUserName(UserName);
+    }
     public String getAllByUserPhoneNumber(String PhoneNumber){
         return userRepository.saveAllByUserPhoneNumber(PhoneNumber);//Fetching User's Phone Number in Se
     }
