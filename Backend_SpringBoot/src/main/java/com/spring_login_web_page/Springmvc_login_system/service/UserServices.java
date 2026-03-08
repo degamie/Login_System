@@ -30,6 +30,9 @@ public class UserServices implements UserDetailsService {
     private PasswordEncoder passwordEncoder;
     @Autowired
     private ApplicationUser applicationUser;
+    public List<ApplicationUser> getByAuthority(String authority){
+         return userRepository.findByAuthority(authority);
+    }
     public List<ApplicationUser> getByUserName(String UserName){
         return  userRepository.findByUserName(UserName);
     }

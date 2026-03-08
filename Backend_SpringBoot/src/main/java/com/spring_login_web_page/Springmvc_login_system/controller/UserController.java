@@ -1,4 +1,4 @@
-//WID(7.3.2026)(Sarthak Mittal)#1
+//WID(8.3.2026)(Sarthak Mittal)#1.1
 package com.spring_login_web_page.Springmvc_login_system.controller;
 import com.spring_login_web_page.Springmvc_login_system.model.ApplicationUser;
 import com.spring_login_web_page.springmvc_login_system.service.UserServices;
@@ -20,6 +20,11 @@ public class UserController {
     public  UserServices userServices;
     @GetMapping("/all")
     public String AccessUserPage() {return "User Page Is Successfully Accessed";}
+    @GetMapping("/authority")
+    public List<ApplicationUser> getByAuthority(String authority){
+        return userServices.getByAuthority(authority);
+    }
+
     @GetMapping("/UserName")
     public List<ApplicationUser> getByUserName(String UserName){
         return  userServices.getByUserName(UserName);

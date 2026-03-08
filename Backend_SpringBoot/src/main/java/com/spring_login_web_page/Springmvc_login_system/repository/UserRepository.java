@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<ApplicationUser, String> {
+    public List<ApplicationUser> findByAuthority(String authority);
     public List<ApplicationUser> findByUserName(String UserName);
     public List<ApplicationUser> getUserId(Integer UserId);
     public List<ApplicationUser>setUserId(Integer UserId);
