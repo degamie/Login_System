@@ -1,6 +1,8 @@
-//WIP(06/03/2026)(Sarthak Mittal)#1.1.1.1.1.1.1.1
+//WIP(08/03/2026)(Sarthak Mittal)#1.1.1.1.1.1.1.1.1.1.1.1
 import React,{useState} from 'react';
-username=null;userId=null;
+userdesignation=null;
+username=null;userId=null;email=null;password=null;
+getUsername=(username)=>{return username;}//Fetching UserName in App
 function login(){
    const {
     register,
