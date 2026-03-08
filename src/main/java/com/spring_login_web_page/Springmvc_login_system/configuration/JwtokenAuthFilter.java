@@ -1,50 +1,22 @@
+//WID(6/3/2026)(Sarthak Mittal)
 package com.spring_login_web_page.Springmvc_login_system.configuration;
 
-import java.beans.BeanProperty;
-import java.sql.Date;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.ssl.SslBundleProperties.Key;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.codec.Decoder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.web.webauthn.api.Bytes;
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import java.util.Map;
+@Component
 @Configuration
 @EnableWebMvc
-
-public class JwtokenAuthFilter extends JwtUtill{
-    @Autowired 
-    public Key secretKey;
-    @Autowired 
-    public Key Keys;
+public class JwtokenAuthFilter {
     @Autowired
-    public byte[] KeyBytes;
-    public String generateToken(String tokenName,Authentication authentication){
-        String username=authentication.getName();
-        Date currDate=new Date();
-    }
-    @Bean
-    public AuthenticationManager  authenticationmanager(AuthenticationConfiguration config)throws Exception{
-        return config.getAuthenticationManager();
-    }
-    @Autowired
-    public JwtokenAuthFilter jwtokenAuthFilter;
-    public Key getSignInKey(){
-        KeyBytes=Decoder.BASE_64.decode(secretKey);
-        return Keys.hmacShaKeyFor(KeyBytes);
-    }
- 
-
-}
-public class JwtokenAuthFilter extends SecurityConfiguration{
-    private String buildToken(Map<String extractClaims, UserDetails userDetails,JwtokenAuthFilter jwtokenAuthFilter2) { 
-            throw new UnsupportedOperationException("Unimplemented method 'buildToken'");
-}
-    public String generateTokeninGamedevApp(Map<String,Object>extractClaims,UserDetails userDetails){
-        return buildToken(extractClaims,userDetails,jwtokenAuthFilter);
+    public JwtokenAuthFilter JWTAuthFilter;
+    public String generateTokeninGamedevApp(Map<String,Object> extractClaims, UserDetails userDetails){
+        return buildToken(extractClaims,userDetails,jwtExpiration);
     }
 
+    
 }

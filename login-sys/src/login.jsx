@@ -28,7 +28,6 @@ const setData=(data)=>{
           const getEmail=(data.email)=>{return email;}//Fetching Email in Server
           const setEmail=(data.email)=>{return email;}// Retrieving Email in Server
           const updateAllByEmail=(data.email)=>{getEmail(email)+setEmail(email);}//Updating All Emails in Server
-          const getPhoneNumber=(PhoneNumebr)=>{return PhoneNumebr;}//fetching PhoneNumebr in App
   return (
       <h2>Login Form</h2>
       <form className="App" OnSubmit={handleSubmit(OnSubmit)}>
