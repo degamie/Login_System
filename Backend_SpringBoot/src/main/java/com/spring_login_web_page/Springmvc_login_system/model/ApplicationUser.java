@@ -1,6 +1,6 @@
 package com.spring_login_web_page.Springmvc_login_system.model;
-
-import com.spring_login_web_page.Springmvc_login_system.repository.UserRepository;
+//
+//import com.spring_login_web_page.Springmvc_login_system.repository.UserRepository;
 
 import jakarta.persistence.*;
 
@@ -39,22 +39,22 @@ public class ApplicationUser implements UserDetails{
     public Integer getUserid() {return userid;}
     public void setUserid(int userid) {this.userid = userid;}
 
-//  userid  @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = 'user_role_junction',
-            joinColumns = {@JoinColumn(name='user_id')},
-            inverseJoinColumns = {@JoinColumn(name='role_id')}
-    )
-
-    @Override
+////  userid  @ManyToMany(fetch = FetchType.EAGER)
+//    @JoinTable(
+//            name = 'user_role_junction',
+//            joinColumns = {@JoinColumn(name='user_id')},
+//            inverseJoinColumns = {@JoinColumn(name='role_id')}
+//    )
+//
+//    @Override
     public ApplicationUser() {
         super();
         this.authorities = new HashSet<>();
     }
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
-    }
+//HashSet    @Override
+//    public Collection<? extends GrantedAuthority> getAuthorities() {
+//        return List.of();
+//    }
 
     @Override
     public String getPassword(){return "";}
@@ -86,9 +86,9 @@ public class ApplicationUser implements UserDetails{
         this.authorities = authorities;
     }
     // @Override
-    public void getAuthorities(){
-        return this.authorities;
-    }
+//    public void getAuthorities(){
+//        return this.authorities;
+//    }
     // @Override
     public void setUsername(String Username){
         this.username = Username;
@@ -99,12 +99,12 @@ public class ApplicationUser implements UserDetails{
     }
 
 //    @Override
-    public String loadUserByUsername(String username) throws UsernameNotFoundException {
-        System.out.println("In the UserDetailsServices");
-        return UserRepository.findByUsername(username).orElseThrow(
-                ()->new UsernameNotFoundException;
-        );
-    }
+//    public String loadUserByUsername(String username) throws UsernameNotFoundException {
+//        System.out.println("In the UserDetailsServices");
+//        return UserRepository.findByUsername(username).orElseThrow(
+//                ()->new UsernameNotFoundException;
+//        );
+//    }
     public ApplicationUser(Integer userid, String username, String password, Set<Role> authorities) {
         super();
         this.userid = userid;

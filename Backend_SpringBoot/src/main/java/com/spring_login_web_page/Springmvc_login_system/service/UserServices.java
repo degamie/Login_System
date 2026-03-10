@@ -1,9 +1,9 @@
-package com.spring_login_web_page.springmvc_login_system.service;
+package com.spring_login_web_page.Springmvc_login_system.service;
 
-import com.spring_login_web_page.Springmvc_login_system.model.ApplicationUser;
-import com.spring_login_web_page.Springmvc_login_system.repository.UserRepository;
-import com.spring_login_web_page.springmvc_login_system.repository.UserRepository;
-import com.spring_login_web_page.springmvc_login_system.model.ApplicationUser;
+//import com.spring_login_web_page.Springmvc_login_system.model.ApplicationUser;
+//import com.spring_login_web_page.Springmvc_login_system.repository.UserRepository;
+//import com.spring_login_web_page.springmvc_login_system.repository.UserRepository;
+//import com.spring_login_web_page.springmvc_login_system.model.ApplicationUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -28,8 +28,8 @@ public class UserServices implements UserDetailsService {
    public UserRepository userRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
-    @Autowired
-    private ApplicationUser applicationUser;
+//    @Autowired
+//    private User applicationUser;
     public List<ApplicationUser> getByAuthority(String authority){
          return userRepository.findByAuthority(authority);
     }
