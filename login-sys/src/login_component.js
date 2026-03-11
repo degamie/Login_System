@@ -1,8 +1,5 @@
 import React,{useState} from 'react';
-<<<<<<< HEAD
 PhoneNum=null;
-=======
->>>>>>> origin/Sarthak_new_Code
 username=null;userId=null;email=null;password=null;
 getUsername=(username)=>{return username;}//Fetching UserName in App
 function login(){
