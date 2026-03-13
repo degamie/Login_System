@@ -1,6 +1,6 @@
 package com.spring_login_web_page.Springmvc_login_system.service;
 
-//import com.spring_login_web_page.Springmvc_login_system.model.ApplicationUser;
+import com.spring_login_web_page.Springmvc_login_system.model.*;
 //import com.spring_login_web_page.Springmvc_login_system.repository.UserRepository;
 //import com.spring_login_web_page.springmvc_login_system.repository.UserRepository;
 //import com.spring_login_web_page.springmvc_login_system.model.ApplicationUser;
@@ -28,6 +28,9 @@ public class UserServices implements UserDetailsService {
    public UserRepository userRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
+    public List<ApplicationUser> setbyUserName(String USerName){
+        return userRepository.saveByUserName(USerName);
+    }
 //    @Autowired
 //    private User applicationUser;
     public List<ApplicationUser> getByAuthority(String authority){

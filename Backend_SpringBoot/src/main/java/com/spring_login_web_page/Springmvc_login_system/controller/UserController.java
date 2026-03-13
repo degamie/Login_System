@@ -1,7 +1,7 @@
-//WID(8.3.2026)(Sarthak Mittal)#1.1
+//WID(12.3.2026)(Sarthak Mittal)#1.1,1
 package com.spring_login_web_page.Springmvc_login_system.controller;
-import com.spring_login_web_page.Springmvc_login_system.model.ApplicationUser;
-import com.spring_login_web_page.springmvc_login_system.service.UserServices;
+import com.spring_login_web_page.Springmvc_login_system.model.*;
+import com.spring_login_web_page.Springmvc_login_system.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -18,6 +18,10 @@ import java.util.List;
 public class UserController {
     @Autowired
     public  UserServices userServices;
+    @PostMapping("/UserName")
+    public List<ApplicationUser> setByUserName(@PathVariable("Username") String UserName, @RequestBody ApplicationUser applicationUser){
+        return userServices.setbyUserName(UserName);
+    }
     @GetMapping("/all")
     public String AccessUserPage() {return "User Page Is Successfully Accessed";}
     @GetMapping("/authority")
