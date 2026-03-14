@@ -51,10 +51,10 @@ public class ApplicationUser implements UserDetails{
         super();
         this.authorities = new HashSet<>();
     }
-//HashSet    @Override
-//    public Collection<? extends GrantedAuthority> getAuthorities() {
-//        return List.of();
-//    }
+   @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of();
+    }
 
     @Override
     public String getPassword(){return "";}

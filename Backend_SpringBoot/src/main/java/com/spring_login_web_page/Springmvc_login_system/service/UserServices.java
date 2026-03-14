@@ -4,6 +4,7 @@ import com.spring_login_web_page.Springmvc_login_system.model.*;
 //import com.spring_login_web_page.Springmvc_login_system.repository.UserRepository;
 //import com.spring_login_web_page.springmvc_login_system.repository.UserRepository;
 //import com.spring_login_web_page.springmvc_login_system.model.ApplicationUser;
+import com.spring_login_web_page.Springmvc_login_system.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.security.core.userdetails.UserDetails;

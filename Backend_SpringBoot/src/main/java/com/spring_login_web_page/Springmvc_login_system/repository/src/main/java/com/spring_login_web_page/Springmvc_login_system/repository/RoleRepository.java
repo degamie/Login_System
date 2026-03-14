@@ -1,4 +1,4 @@
-//WIP(10/3/2026)(Sarthak Mittal)#DegamieSign)
+//WIP(14/3/2026)(Sarthak Mittal)#DegamieSign)#1
 package com.spring_login_web_page.Springmvc_login_system.repository.src.main.java.com.spring_login_web_page.Springmvc_login_system.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Integer> {
+    public List<Role> saveByRoleName(String roleName);
     public List<Role> findByRolePassword(String rolepassword);
     public List<Role> findByRoleName(String roleName);
     public String findAllByUserId(String UserId);
