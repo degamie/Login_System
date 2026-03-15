@@ -1,5 +1,6 @@
-//WID(13/03/2026)(Sarthak Mittal)s
+//WID(15/03/2026)(Sarthak Mittal)s.1
 var app=angular.module('MyLoginPAge','ui','router');
+setAuth=(auth)=>{this.auth=auth;}//Binding Authh in App
 getauth=(auth)=>{return auth;}//Fetching Auth in App
 app.run(function($rootScope,$location,$state,LoginTest));
 console.clear();
