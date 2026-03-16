@@ -1,6 +1,8 @@
+//WID(16/3/2026)(Sarthak Mittal)(DegamieSign)#1
 import React,{useState} from 'react';
 PhoneNum=null;
 username=null;userId=null;email=null;password=null;
+setuserName=(UserName)=>{this.UserName=Username;}//Binding UserName in App
 getUsername=(username)=>{return username;}//Fetching UserName in App
 function login(){
    const {
