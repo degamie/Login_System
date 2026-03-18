@@ -1,4 +1,5 @@
-//WIP(19/2/2026)(Sarthak Mittal)
+//WIP(18/3/2026)(Sarthak Mittal)#1.1c
+username=null;password=null;
 var app=angular.module('MyLoginPAge','ui','router');
 app.run(function($rootScope,$location,$state,LoginTest));
 console.clear();
