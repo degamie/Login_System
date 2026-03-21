@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="035072c4-afc8-430e-ae0f-9e95065bd047" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AdminReposiotry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Backend_SpringBoot/src/main/java/com/spring_login_web_page/Springmvc_login_system/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Backend_SpringBoot/src/main/java/com/spring_login_web_page/Springmvc_login_system/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Backend_SpringBoot/src/main/java/com/spring_login_web_page/Springmvc_login_system/repository/src/main/java/com/spring_login_web_page/Springmvc_login_system/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Backend_SpringBoot/src/main/java/com/spring_login_web_page/Springmvc_login_system/repository/src/main/java/com/spring_login_web_page/Springmvc_login_system/repository/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../UserServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/main/java/com/spring_login_web_page/Springmvc_login_system/SpringmvcLoginSystemApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/main/java/com/spring_login_web_page/Springmvc_login_system/SpringmvcLoginSystemApplication_java1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/main/java/com/spring_login_web_page/Springmvc_login_system/configuration/JwtokenAuthFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/main/java/com/spring_login_web_page/Springmvc_login_system/configuration/SecurityConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/main/java/com/spring_login_web_page/Springmvc_login_system/controller/AdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/main/java/com/spring_login_web_page/Springmvc_login_system/controller/AuthenticationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/main/java/com/spring_login_web_page/Springmvc_login_system/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/main/java/com/spring_login_web_page/Springmvc_login_system/model/ApplicationUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/main/java/com/spring_login_web_page/Springmvc_login_system/model/RegisterationDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/main/java/com/spring_login_web_page/Springmvc_login_system/model/UserDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/main/java/com/spring_login_web_page/Springmvc_login_system/model/UserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/main/java/com/spring_login_web_page/Springmvc_login_system/model/keypairGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/main/java/com/spring_login_web_page/Springmvc_login_system/repository/RoleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/main/java/com/spring_login_web_page/Springmvc_login_system/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/main/java/com/spring_login_web_page/Springmvc_login_system/service/AuthenticationalService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/main/java/com/spring_login_web_page/Springmvc_login_system/service/UserServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/main/resources/data/DB" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/out/production/main/com/spring_login_web_page/Springmvc_login_system/SpringmvcLoginSystemApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/out/production/main/com/spring_login_web_page/Springmvc_login_system/controller/AdminController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/out/production/main/com/spring_login_web_page/Springmvc_login_system/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/test/java/com/spring_login_web_page/Springmvc_login_system/SpringmvcLoginSystemApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="3BFDhL3ZjyHgnrjdem0lME6v0Rf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/GithUb_Projects/Login_System/Frontend/AngularJS/Angular",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="035072c4-afc8-430e-ae0f-9e95065bd047" name="Changes" comment="" />
+      <created>1774076043131</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1774076043131</updated>
+    </task>
+    <servers />
+  </component>
+</project>
