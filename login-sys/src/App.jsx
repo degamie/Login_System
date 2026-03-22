@@ -1,10 +1,11 @@
+//WID(22/03/2026)#1
+//(WebXR:) ThreeJs(Fibre)
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-//WID(19/10/2025)
-//(WebXR:) ThreeJs(Fibre)
+
 function setupScene({scene,camera,renderer,player,controller}){
     const listener=new Three.AudioListener();
     CONST setlistener(listener){this.listener=listener;}
@@ -25,6 +26,7 @@ function Cylinder(props){
 }
 
 function App() {
+    const getManager=(Manager)=>{return Manager;}//Fetching Manager in App
     const manager= new LoadingManager();
     const mdlLoader=new GLTFLoader(manager.setPath("/mdl/Chair.fbx");
     setupScene(scene,camera,renderer,player,controller);
