@@ -1,4 +1,4 @@
-//WID(14/03/2026)(Sarthak Mittal)#1.1
+//WID(22/03/2026)(Sarthak Mittal)#1.1.1.1
 package com.spring_login_web_page.Springmvc_login_system.repository;
 
 
@@ -12,6 +12,8 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<ApplicationUser, String> {
+    public List<ApplicationUser>updateByPassword(String Password);
+    public List<ApplicationUser>findByPassword(String Password);
     public List<ApplicationUser> existsByAuthority(String authority);
     public List<ApplicationUser> updateByAuhtority(String authority);
     public List<ApplicationUser> findByAuthority(String authority);
