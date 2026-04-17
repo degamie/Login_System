@@ -1,9 +1,11 @@
+//WID(5/4/2026))Sarthak Mittal)(Degameisigncc)
 import React from 'react'
 
 function ContactUs() {
   ContactUs(message){
     this.message=this.message;
   }
+  const updateMessage=(message)=>{getMessage(message)+setMessage(message)+1;}//Updating message in App
 
   return (
       const getMessage(message){
