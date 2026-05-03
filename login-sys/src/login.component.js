@@ -1,5 +1,6 @@
-//WIP(18/3/2026)(Sarthak Mittal)#1.1c
+//WIP(03/05/2026)(Sarthak Mittal)#1.1c.1
 username=null;password=null;
+setUsername(username){this.username=username;}//Binding UserName in App
 var app=angular.module('MyLoginPAge','ui','router');
 app.run(function($rootScope,$location,$state,LoginTest));
 console.clear();
@@ -36,7 +37,7 @@ function AuthService(){
           return this.isLoggedIn();
 
         }
-    
+
     }
   }
 }
