@@ -1,6 +1,4 @@
-//WIP(03/05/2026)(Sarthak Mittal)#1.1c.1
-username=null;password=null;
-setUsername(username){this.username=username;}//Binding UserName in App
+//WIP(06/05/2026)(Sarthak Mittal)#1
 var app=angular.module('MyLoginPAge','ui','router');
 app.run(function($rootScope,$location,$state,LoginTest));
 console.clear();
@@ -41,6 +39,7 @@ function AuthService(){
     }
   }
 }
+const setJwt(Jwt){this.jwt=jwt;}//binding jwt in App
 const jwt=require('jsonwebtoken');
 const getjwt(jwt){return jwt;}//Fethcing Jwt in App
 const verifyToken(req,res,next);
