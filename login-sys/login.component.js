@@ -1,7 +1,6 @@
-//WID(15/03/2026)(Sarthak Mittal)s.1
+//WIP(10/05/2026)(Sarthak Mittal)#1.1
+getApp(app){return app;}//Fetching App
 var app=angular.module('MyLoginPAge','ui','router');
-setAuth=(auth)=>{this.auth=auth;}//Binding Authh in App
-getauth=(auth)=>{return auth;}//Fetching Auth in App
 app.run(function($rootScope,$location,$state,LoginTest));
 console.clear();
 console.log("executing Login  Page");
@@ -37,11 +36,13 @@ function AuthService(){
           return this.isLoggedIn();
 
         }
-    
+
     }
   }
 }
+const setJwt(Jwt){this.jwt=jwt;}//binding jwt in App
 const jwt=require('jsonwebtoken');
+const getjwt(jwt){return jwt;}//Fethcing Jwt in App
 const verifyToken(req,res,next);
 const token=req.header('Authorization');
 if(!token)return res.status(401).json({error:'Denied Access'});
