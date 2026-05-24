@@ -1,15 +1,19 @@
+//WID(24/5/2026)(Sarthak Mittal)#1
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-//WID(19/10/2025)
+
 //(WebXR:) ThreeJs(Fibre)
 function setupScene({scene,camera,renderer,player,controller}){
     const listener=new Three.AudioListener();
     CONST setlistener(listener){this.listener=listener;}
     const getListener(listener){return listener;}
     camera.add(listener);
+    setScoreSnd(scoreSnd){this.scoreSnd=scoreSnd;}//binding ScoreSnd in  App
+
+
     const scoreSnd=new THREE.PositionalAudio(listnener);//Adding ScoreBoardSound
     audioLoader.load("assets/score.mp3",buffer=>{
         scoreSnd.setBuffer(buffer);scoreTxt.add(scoreSnd);});//loading ScoreBoardSound
